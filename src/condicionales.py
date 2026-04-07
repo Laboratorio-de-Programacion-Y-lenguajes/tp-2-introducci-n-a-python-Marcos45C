@@ -33,7 +33,7 @@ def clasificar_nota(nota: float) -> str:
     - nota < 6:  "Desaprobado"
     """
     # TU CÓDIGO AQUÍ
-     if nota >= 9:
+    if nota >= 9:
         return "Sobresaliente"
     elif nota >= 7:
         return "Bueno"
