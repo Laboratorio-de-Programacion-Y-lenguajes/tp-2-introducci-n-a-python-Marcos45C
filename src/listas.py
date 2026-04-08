@@ -8,7 +8,7 @@ def suma_lista(numeros: list) -> int | float:
     Retorna la suma de todos los elementos de la lista.
     """
     # TU CÓDIGO AQUÍ
-    pass
+    return sum(numeros)
 
 
 def filtrar_pares(numeros: list) -> list:
@@ -16,7 +16,8 @@ def filtrar_pares(numeros: list) -> list:
     Retorna una nueva lista con solo los números pares.
     """
     # TU CÓDIGO AQUÍ
-    pass
+    return [n for n in numeros if n % 2 == 0]
+     
 
 
 def invertir_lista(lista: list) -> list:
@@ -24,7 +25,7 @@ def invertir_lista(lista: list) -> list:
     Retorna la lista invertida SIN modificar la original.
     """
     # TU CÓDIGO AQUÍ
-    pass
+    return lista[::-1]
 
 
 def eliminar_duplicados(lista: list) -> list:
@@ -33,7 +34,11 @@ def eliminar_duplicados(lista: list) -> list:
     manteniendo el orden de primera aparición.
     """
     # TU CÓDIGO AQUÍ
-    pass
+    resultado = []
+    for elemento in lista:
+        if elemento not in resultado:
+            resultado.append(elemento)
+    return resultado
 
 
 def aplanar_lista(lista: list) -> list:
@@ -42,4 +47,8 @@ def aplanar_lista(lista: list) -> list:
     Ejemplo: aplanar_lista([[1,2],[3,4]]) -> [1, 2, 3, 4]
     """
     # TU CÓDIGO AQUÍ
-    pass
+    resultado = []
+    for sublista in lista:
+        for elemento in sublista:
+            resultado.append(elemento)
+    return resultado

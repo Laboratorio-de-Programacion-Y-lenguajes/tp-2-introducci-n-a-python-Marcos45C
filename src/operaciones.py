@@ -9,7 +9,8 @@ def es_palindromo(texto: str) -> bool:
     Ejemplo: es_palindromo("Anita lava la tina") -> True
     """
     # TU CÓDIGO AQUÍ
-    pass
+    texto_limpio = texto.replace(" ", "").lower()
+    return texto_limpio == texto_limpio[::-1]
 
 
 def capitalizar_palabras(texto: str) -> str:
@@ -18,7 +19,9 @@ def capitalizar_palabras(texto: str) -> str:
     Ejemplo: capitalizar_palabras("hola mundo") -> "Hola Mundo"
     """
     # TU CÓDIGO AQUÍ
-    pass
+    palabras = texto.split()
+    palabras_capitalizadas = [p.capitalize() for p in palabras]
+    return " ".join(palabras_capitalizadas)
 
 
 def contar_vocales(texto: str) -> int:
@@ -27,7 +30,15 @@ def contar_vocales(texto: str) -> int:
     sin distinguir mayúsculas/minúsculas.
     """
     # TU CÓDIGO AQUÍ
-    pass
+    vocales = "aeiou"
+    contador = 0
+
+    for letra in texto.lower():
+        if letra in vocales:
+            contador += 1
+
+    return contador
+
 
 
 def caesar_cipher(texto: str, desplazamiento: int) -> str:
@@ -37,4 +48,14 @@ def caesar_cipher(texto: str, desplazamiento: int) -> str:
     Ejemplo: caesar_cipher("abc", 1) -> "bcd"
     """
     # TU CÓDIGO AQUÍ
-    pass
+    resultado = ""
+
+    for char in texto:
+        if char.isalpha():
+            base = ord('a') if char.islower() else ord('A')
+            nueva_letra = chr((ord(char) - base + desplazamiento) % 26 + base)
+            resultado += nueva_letra
+        else:
+            resultado += char
+
+    return resultado
